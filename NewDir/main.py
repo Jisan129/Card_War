@@ -119,20 +119,46 @@ print(stack_learner(0, 1, 2, 7))
 
 def primeNumbers(limit):
     numbers = 0
-    temp = 0
     result = 0
     for i in range(2, limit + 1):
-        for j in range(2, int(i / 2)):
+        temp = 0
+
+        for j in range(2, i - 1):
             c = i % j
             if c == 0:
                 temp = 1
-            else:
-                temp = 0
 
         if temp == 0:
             result += 1
 
-    return result - 1
+    return result
 
 
 print(primeNumbers(100))
+
+
+
+
+
+def print_big(letter):
+    patterns = {1:'  *  ',2:' * * ',3:'*   *',4:'*****',5:'**** ',6:'   * ',7:' *   ',8:'*   * ',9:'*    '}
+    alphabet = {'A':[1,2,4,3,3],'B':[5,3,5,3,5],'C':[4,9,9,9,4],'D':[5,3,3,3,5],'E':[4,9,4,9,4]}
+    for pattern in alphabet[letter.upper()]:
+        print(patterns[pattern])
+
+
+print_big('B')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
